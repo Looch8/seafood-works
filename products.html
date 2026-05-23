@@ -20,32 +20,36 @@
   <link rel="stylesheet"          href="styles.css">
 
   <style>
-    /* Products page extra styles */
+    /* Products page -------------------------------------------------- */
     .product-list {
       display: flex;
       flex-direction: column;
       gap: .75rem;
       margin-top: 1.25rem;
     }
+
     .product-item {
       display: flex;
-      gap: .75rem;
+      gap: .875rem;
       align-items: flex-start;
-      padding: .875rem;
+      padding: .75rem;
       background: var(--white);
       border: 1.5px solid var(--border);
       border-radius: var(--r);
     }
-    .product-item-icon {
-      font-size: 1.375rem;
+
+    /* Product thumbnail replacing the old emoji icon */
+    .product-item-img {
+      width: 76px;
+      height: 76px;
+      object-fit: cover;
+      border-radius: 6px;
       flex-shrink: 0;
-      line-height: 1;
-      margin-top: .1rem;
+      background: var(--blue-light);
     }
-    .product-item h4    { font-size: .9375rem; margin-bottom: .2rem; }
-    .product-item p     { font-size: .875rem; color: var(--muted); margin: 0; }
-    .section--sand .product-item { background: var(--white); }
-    .section--ice  .product-item { background: var(--white); }
+
+    .product-item h4 { font-size: .9375rem; margin-bottom: .2rem; }
+    .product-item p  { font-size: .875rem; color: var(--muted); margin: 0; }
 
     /* Category feature image */
     .cat-feature-img {
@@ -57,23 +61,8 @@
       box-shadow: var(--shadow);
     }
 
-    /* Placeholder for categories without a real photo */
-    .cat-img-placeholder {
-      border-radius: var(--r-lg);
-      width: 100%;
-      aspect-ratio: 4/3;
-      background: linear-gradient(135deg, var(--blue-light) 0%, #C2D4EF 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
-      margin-bottom: 1.5rem;
-      box-shadow: var(--shadow);
-    }
-
     @media (min-width: 768px) {
-      .cat-feature-img,
-      .cat-img-placeholder { margin-bottom: 0; }
+      .cat-feature-img { margin-bottom: 0; }
 
       .cat-layout {
         display: grid;
@@ -81,7 +70,13 @@
         gap: 3rem;
         align-items: start;
       }
+
+      .product-item-img {
+        width: 84px;
+        height: 84px;
+      }
     }
+
     @media (min-width: 1024px) {
       .product-list { gap: .875rem; }
     }
@@ -146,12 +141,12 @@
         <p style="margin:0;font-size:.9375rem;color:var(--text);">
           <strong>Stock varies daily.</strong> Call
           <a href="tel:+61883656557" style="color:var(--blue);font-weight:600;">(08) 8365 6557</a>
-          to check availability or to place a wholesale order.
+          to check availability or place a wholesale order.
         </p>
       </div>
     </div>
 
-    <!-- FRESH FISH -->
+    <!-- ===== FRESH FISH ===== -->
     <section class="section" id="fish" aria-labelledby="fish-heading">
       <div class="container">
         <div class="cat-divider">
@@ -170,48 +165,61 @@
           <div>
             <p>Our fish counter changes daily based on what's freshest at the markets. Below are our regulars — plus whatever the sea has offered up that morning.</p>
             <ul class="product-list" aria-label="Fresh fish products">
+
               <li class="product-item">
-                <span class="product-item-icon" aria-hidden="true">🐟</span>
+                <img class="product-item-img" src="images/yellowfin-tuna.jpg"
+                     alt="Fresh yellowfin tuna" loading="lazy" width="84" height="84">
                 <div>
                   <h4>Yellowfin Tuna</h4>
                   <p>South Australian caught. Exceptional sashimi-grade flesh. Available whole or filleted to order.</p>
                 </div>
               </li>
+
               <li class="product-item">
-                <span class="product-item-icon" aria-hidden="true">🐟</span>
+                <img class="product-item-img" src="images/atlantic-salmon.jpg"
+                     alt="Fresh Atlantic salmon" loading="lazy" width="84" height="84">
                 <div>
                   <h4>Atlantic Salmon</h4>
                   <p>Premium quality, consistently fresh. Ideal for everyday cooking or sushi-grade preparations.</p>
                 </div>
               </li>
+
               <li class="product-item">
-                <span class="product-item-icon" aria-hidden="true">🐟</span>
+                <img class="product-item-img" src="images/kingfish.jpg"
+                     alt="Fresh kingfish" loading="lazy" width="84" height="84">
                 <div>
                   <h4>Kingfish (Yellowtail)</h4>
                   <p>Prized for its rich, buttery flavour. A South Australian favourite, filleted fresh in-store.</p>
                 </div>
               </li>
+
               <li class="product-item">
-                <span class="product-item-icon" aria-hidden="true">🐡</span>
+                <img class="product-item-img" src="images/smokedfish.jpg"
+                     alt="Smoked fish selection" loading="lazy" width="84" height="84">
                 <div>
                   <h4>Smoked Fish Range</h4>
                   <p>A selection of house-smoked fish — ask the team what's on today.</p>
                 </div>
               </li>
+
               <li class="product-item">
-                <span class="product-item-icon" aria-hidden="true">🎣</span>
+                <img class="product-item-img" src="images/game-fish-marlin.jpg"
+                     alt="Game fish — marlin" loading="lazy" width="84" height="84">
                 <div>
                   <h4>Game Fish</h4>
                   <p>Marlin, broadbill and seasonal game fish when available. Ask in-store.</p>
                 </div>
               </li>
+
               <li class="product-item">
-                <span class="product-item-icon" aria-hidden="true">🐠</span>
+                <img class="product-item-img" src="images/market.jpeg"
+                     alt="Fresh fish at the market" loading="lazy" width="84" height="84">
                 <div>
                   <h4>Daily Market Catch</h4>
                   <p>Whole fish and fillets direct from the morning market — the most seasonal, the most fresh.</p>
                 </div>
               </li>
+
             </ul>
           </div>
 
@@ -219,7 +227,7 @@
       </div>
     </section>
 
-    <!-- SHELLFISH -->
+    <!-- ===== SHELLFISH ===== -->
     <section class="section section--sand" id="shellfish" aria-labelledby="shellfish-heading">
       <div class="container">
         <div class="cat-divider">
@@ -229,57 +237,70 @@
         <div class="cat-layout">
 
           <div>
-            <!-- TODO: Replace with a real shellfish/crayfish product photo -->
-            <div class="cat-img-placeholder" role="img" aria-label="Fresh shellfish and crustaceans">
-              <span aria-hidden="true">🦐</span>
-            </div>
+            <img src="images/live-crayfish.jpg"
+                 alt="Live South Australian crayfish"
+                 class="cat-feature-img"
+                 loading="lazy" width="600" height="450">
           </div>
 
           <div>
             <p>From live South Australian crayfish to king prawns and everything in between — our shellfish range is as comprehensive as it gets for a local fishmonger.</p>
             <ul class="product-list" aria-label="Shellfish and crustacean products">
+
               <li class="product-item">
-                <span class="product-item-icon" aria-hidden="true">🦞</span>
+                <img class="product-item-img" src="images/live-crayfish.jpg"
+                     alt="Live SA crayfish" loading="lazy" width="84" height="84">
                 <div>
                   <h4>Live SA Crayfish</h4>
                   <p>Southern rock lobster, sourced live from South Australian waters. Popular for Christmas and special occasions.</p>
                 </div>
               </li>
+
               <li class="product-item">
-                <span class="product-item-icon" aria-hidden="true">🦀</span>
+                <img class="product-item-img" src="images/crab.jpg"
+                     alt="Fresh crab" loading="lazy" width="84" height="84">
                 <div>
                   <h4>Fresh Crab</h4>
                   <p>Blue swimmer and mud crab when available. Sold whole or cleaned. Ask the team.</p>
                 </div>
               </li>
+
               <li class="product-item">
-                <span class="product-item-icon" aria-hidden="true">🦐</span>
+                <img class="product-item-img" src="images/king-prawns.jpg"
+                     alt="King prawns" loading="lazy" width="84" height="84">
                 <div>
                   <h4>King Prawns</h4>
                   <p>Fresh and selected frozen. Green or cooked. Available by weight.</p>
                 </div>
               </li>
+
               <li class="product-item">
-                <span class="product-item-icon" aria-hidden="true">🐚</span>
+                <img class="product-item-img" src="images/scallops.jpg"
+                     alt="Fresh scallops" loading="lazy" width="84" height="84">
                 <div>
                   <h4>Scallops</h4>
                   <p>Saucer scallops, roe-on when available. Fresh or cleaned to order.</p>
                 </div>
               </li>
+
               <li class="product-item">
-                <span class="product-item-icon" aria-hidden="true">🐚</span>
+                <img class="product-item-img" src="images/mussells.jpg"
+                     alt="Fresh mussels" loading="lazy" width="84" height="84">
                 <div>
                   <h4>Mussels &amp; Cockles</h4>
                   <p>South Australian mussels, live or pre-cleaned. Cockles fresh from the market.</p>
                 </div>
               </li>
+
               <li class="product-item">
-                <span class="product-item-icon" aria-hidden="true">🦑</span>
+                <img class="product-item-img" src="images/squid.jpg"
+                     alt="Fresh squid" loading="lazy" width="84" height="84">
                 <div>
                   <h4>Squid</h4>
                   <p>Whole or cleaned tubes. Great for calamari, barbecue, or stuffing.</p>
                 </div>
               </li>
+
             </ul>
           </div>
 
@@ -287,7 +308,7 @@
       </div>
     </section>
 
-    <!-- OYSTERS -->
+    <!-- ===== OYSTERS ===== -->
     <section class="section section--ice" id="oysters" aria-labelledby="oysters-heading">
       <div class="container">
         <div class="cat-divider">
@@ -298,7 +319,7 @@
 
           <div>
             <img src="images/oyster-platter.jpg"
-                 alt="A stunning display of freshly shucked oysters on ice with lemon garnish, prepared for a function by Seafood Works"
+                 alt="A stunning display of freshly shucked oysters on ice with lemon garnish, prepared for a function"
                  class="cat-feature-img"
                  loading="lazy" width="600" height="450">
           </div>
@@ -306,34 +327,43 @@
           <div>
             <p>Our oysters are shucked fresh in-store, year-round — never pre-shucked, never sitting. We take oysters seriously.</p>
             <ul class="product-list" aria-label="Oyster products">
+
               <li class="product-item">
-                <span class="product-item-icon" aria-hidden="true">🦪</span>
+                <img class="product-item-img" src="images/natural-oyster.jpg"
+                     alt="Natural freshly shucked oyster on the half shell" loading="lazy" width="84" height="84">
                 <div>
                   <h4>Natural Oysters</h4>
-                  <p>Freshly shucked, served on the half shell. Clean, briny, and ready to eat. Available by the half dozen, dozen or more.</p>
+                  <p>Freshly shucked on the half shell. Clean, briny, and ready to eat. By the half dozen, dozen or more.</p>
                 </div>
               </li>
+
               <li class="product-item">
-                <span class="product-item-icon" aria-hidden="true">🦪</span>
+                <img class="product-item-img" src="images/kilpatrick-oysters.jpg"
+                     alt="Kilpatrick oysters baked with sauce" loading="lazy" width="84" height="84">
                 <div>
                   <h4>Kilpatrick Oysters</h4>
-                  <p>Our house Kilpatrick sauce, baked to order. A crowd favourite. Available by the half dozen or dozen.</p>
+                  <p>Our house Kilpatrick sauce, baked to order. A crowd favourite. By the half dozen or dozen.</p>
                 </div>
               </li>
+
               <li class="product-item">
-                <span class="product-item-icon" aria-hidden="true">🥂</span>
+                <img class="product-item-img" src="images/oyster-tastings.jpg"
+                     alt="Oyster flight tasting selection" loading="lazy" width="84" height="84">
                 <div>
                   <h4>Oyster Flight Tastings</h4>
-                  <p>A curated selection of oyster styles for events and special occasions. Available by request — call us to arrange.</p>
+                  <p>A curated selection of oyster styles for events and special occasions. By request — call us to arrange.</p>
                 </div>
               </li>
+
               <li class="product-item">
-                <span class="product-item-icon" aria-hidden="true">🎉</span>
+                <img class="product-item-img" src="images/function-platter.jpg"
+                     alt="Large oyster platter for a function or event" loading="lazy" width="84" height="84">
                 <div>
                   <h4>Event &amp; Function Platters</h4>
-                  <p>Large-format oyster platters on ice for functions, parties and corporate events. Contact us to discuss quantities and pricing.</p>
+                  <p>Large-format oyster platters on ice for functions, parties and corporate events. Contact us to discuss quantities.</p>
                 </div>
               </li>
+
             </ul>
           </div>
 
@@ -341,7 +371,7 @@
       </div>
     </section>
 
-    <!-- SPECIALTY & READY TO ENJOY -->
+    <!-- ===== SPECIALTY ===== -->
     <section class="section" id="specialty" aria-labelledby="specialty-heading">
       <div class="container">
         <div class="cat-divider">
@@ -352,10 +382,10 @@
         <div class="card-grid">
 
           <article class="card">
-            <div style="background:linear-gradient(135deg,var(--blue-light),#B8CCE8);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:3.5rem;"
-                 role="img" aria-label="Sushi bites">
-              <span aria-hidden="true">🍣</span>
-            </div>
+            <img class="card-img"
+                 src="images/sushi-bites.jpg"
+                 alt="Fresh sushi bites — yellowfin tuna, Atlantic salmon and bluefin tuna varieties"
+                 loading="lazy" width="600" height="450">
             <div class="card-body">
               <p class="product-tag">Ready to eat</p>
               <h3>Sushi Bites</h3>
@@ -364,22 +394,22 @@
           </article>
 
           <article class="card">
-            <div style="background:linear-gradient(135deg,var(--sand),#E8D8C4);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:3.5rem;"
-                 role="img" aria-label="Seafood platter">
-              <span aria-hidden="true">🦞</span>
-            </div>
+            <img class="card-img"
+                 src="images/seafood-platter.jpg"
+                 alt="A generous seafood platter with prawns, crayfish, crab and oysters"
+                 loading="lazy" width="600" height="450">
             <div class="card-body">
               <p class="product-tag">For sharing</p>
               <h3>Seafood Platters</h3>
-              <p>Customisable seafood platters for any occasion — oysters, crayfish, prawns, crab and more. Ask the team to put one together for you.</p>
+              <p>Customisable seafood platters for any occasion — oysters, crayfish, prawns, crab and more. Ask the team to put one together.</p>
             </div>
           </article>
 
           <article class="card">
-            <div style="background:linear-gradient(135deg,#EAF0E0,#D0E0C8);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:3.5rem;"
-                 role="img" aria-label="Lobster tail Kiev">
-              <span aria-hidden="true">🦪</span>
-            </div>
+            <img class="card-img"
+                 src="images/lobster-tail.jpg"
+                 alt="Lobster tail Kiev prepared and ready to cook"
+                 loading="lazy" width="600" height="450">
             <div class="card-body">
               <p class="product-tag">Specialty item</p>
               <h3>Lobster Tail Kiev</h3>
@@ -388,10 +418,10 @@
           </article>
 
           <article class="card">
-            <div style="background:linear-gradient(135deg,#F0E8E0,#E0D0C0);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:3.5rem;"
-                 role="img" aria-label="Marinara mix and marinated products">
-              <span aria-hidden="true">🍲</span>
-            </div>
+            <img class="card-img"
+                 src="images/marinara-mix.jpg"
+                 alt="House-made marinara mix of fresh seafood"
+                 loading="lazy" width="600" height="450">
             <div class="card-body">
               <p class="product-tag">House-made</p>
               <h3>Marinara Mix &amp; Marinated Products</h3>
@@ -403,7 +433,7 @@
       </div>
     </section>
 
-    <!-- WHOLESALE & DELIVERY BAND -->
+    <!-- ===== WHOLESALE & DELIVERY ===== -->
     <section class="section section--dark" id="wholesale" aria-labelledby="wholesale-heading">
       <div class="container">
         <div class="story-grid">
@@ -421,7 +451,7 @@
 
           <div>
             <img src="images/work-vehicle.jpg"
-                 alt="Seafood Works branded delivery van with Fresh. Local. Seafood. on the side, driven by a team member"
+                 alt="Seafood Works branded delivery van with Fresh. Local. Seafood. on the side"
                  style="border-radius:var(--r-lg);width:100%;aspect-ratio:4/3;object-fit:cover;"
                  loading="lazy" width="600" height="450">
           </div>

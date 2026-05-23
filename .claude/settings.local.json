@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.facebook.com)",
+      "WebFetch(domain:www.yellowpages.com.au)",
+      "WebFetch(domain:wanderlog.com)",
+      "WebFetch(domain:www.whereis.com)",
+      "WebFetch(domain:seafoodworks.online)",
+      "WebFetch(domain:www.instagram.com)",
+      "WebFetch(domain:www.findglocal.com)",
+      "WebFetch(domain:www.startlocal.com.au)",
+      "Bash(mkdir -p \"/Users/luke/Desktop/seafood works/js\")",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(sed -i '' 's/Newton Gardens Shopping Centre/Newton Central Shopping Centre/g' index.html about.html contact.html products.html README.md)",
+      "Bash(sed -i '' \"s/We're Right in Newton Gardens/We're Right in Newton Central/g\" contact.html)",
+      "Bash(git commit -m ' *)"
+    ],
+    "additionalDirectories": [
+      "/Users/luke/Desktop/seafood works"
+    ]
+  }
+}
